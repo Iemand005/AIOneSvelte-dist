@@ -76,8 +76,7 @@ async function initialize(file) {
     if (!initializing && !module) {
         initializing = (async () => {
             const moduleOptions = {
-                workerFile: file,
-                mainScriptUrlOrBlob: runtimeUrl
+                workerFile: file
             };
 
             if (WASM_OVERRIDE || !HAS_EXTERNAL_RUNTIME) {
