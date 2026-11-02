@@ -1,0 +1,14 @@
+{
+  "name": "AIOne",
+  "short_name": "AIOne",
+  "description": "AIOne web app",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#171413",
+  "theme_color": "#171413",
+  "icons": [
+    { "src": "/icons.svg", "sizes": "192x192", "type": "image/svg+xml" },
+    { "src": "/icons.svg", "sizes": "512x512", "type": "image/svg+xml" }
+  ]
+}
