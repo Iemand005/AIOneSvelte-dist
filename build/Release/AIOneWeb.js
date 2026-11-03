@@ -6171,6 +6171,19 @@ ${functionBody}
 
 
   
+  var __emval_get_property = function(handle, key) {
+    handle = bigintToI53Checked(handle);
+    key = bigintToI53Checked(key);
+  
+  var ret = (() => { 
+      handle = Emval.toValue(handle);
+      key = Emval.toValue(key);
+      return Emval.toHandle(handle[key]);
+     })();
+  return BigInt(ret);
+  };
+
+  
   function __emval_incref(handle) {
     handle = bigintToI53Checked(handle);
   
@@ -6198,6 +6211,17 @@ ${functionBody}
 
   
   
+  var __emval_new_cstring = (v) => {
+    v = bigintToI53Checked(v);
+  
+  return BigInt(Emval.toHandle(getStringOrSymbol(v)));
+  };
+
+  
+  var __emval_new_object = () => BigInt(Emval.toHandle({}));;
+
+  
+  
   
   function __emval_run_destructors(handle) {
     handle = bigintToI53Checked(handle);
@@ -6208,6 +6232,31 @@ ${functionBody}
       __emval_decref(handle);
     ;
   }
+
+  
+  function __emval_set_property(handle, key, value) {
+    handle = bigintToI53Checked(handle);
+    key = bigintToI53Checked(key);
+    value = bigintToI53Checked(value);
+  
+  
+      handle = Emval.toValue(handle);
+      key = Emval.toValue(key);
+      value = Emval.toValue(value);
+      handle[key] = value;
+    ;
+  }
+
+  
+  var __emval_typeof = function(handle) {
+    handle = bigintToI53Checked(handle);
+  
+  var ret = (() => { 
+      handle = Emval.toValue(handle);
+      return Emval.toHandle(typeof handle);
+     })();
+  return BigInt(ret);
+  };
 
   
   
@@ -9645,11 +9694,21 @@ var wasmImports = {
   /** @export */
   _emval_decref: __emval_decref,
   /** @export */
+  _emval_get_property: __emval_get_property,
+  /** @export */
   _emval_incref: __emval_incref,
   /** @export */
   _emval_invoke: __emval_invoke,
   /** @export */
+  _emval_new_cstring: __emval_new_cstring,
+  /** @export */
+  _emval_new_object: __emval_new_object,
+  /** @export */
   _emval_run_destructors: __emval_run_destructors,
+  /** @export */
+  _emval_set_property: __emval_set_property,
+  /** @export */
+  _emval_typeof: __emval_typeof,
   /** @export */
   _mmap_js: __mmap_js,
   /** @export */
