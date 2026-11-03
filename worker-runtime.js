@@ -65,7 +65,7 @@ if (self.name?.startsWith("em-pthread")) {
         return new URL(path, runtimeUrl).href;
     }
 
-    async function initialize(file) {
+    async function initialize(file, onProgress) {
         if (session) {
             throw new Error("A model is already loaded");
         }
@@ -103,13 +103,16 @@ if (self.name?.startsWith("em-pthread")) {
             await initializing;
         }
 
-        await session.loadModel("/models/" + file.name);
+        await session.loadModel(
+            "/models/" + file.name,
+            onProgress ?? undefined
+        );
     }
 
-    async function invoke(method, args, onToken) {
+    async function invoke(method, args, onToken, onProgress) {
         switch (method) {
             case "loadModel":
-                return initialize(args.file);
+                return initialize(args.file, onProgress);
 
             case "generate":
                 if (!session?.isLoaded()) {
@@ -142,8 +145,15 @@ if (self.name?.startsWith("em-pthread")) {
                 })
                 : null;
 
+            const onProgress = data.args?.progress
+                ? progress => port.postMessage({
+                    id: data.id,
+                    progress
+                })
+                : null;
+
             const execute = operationQueue.then(() =>
-                invoke(data.method, data.args ?? {}, onToken)
+                invoke(data.method, data.args ?? {}, onToken, onProgress)
             );
 
             operationQueue = execute.catch(() => {});
