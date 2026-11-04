@@ -1,4 +1,4 @@
-const CACHE_VERSION = "mw20de38";
+const CACHE_VERSION = "mw20z1fh";
 const CACHE_PREFIX = "aione-";
 const CACHE_NAME = `${CACHE_PREFIX}${CACHE_VERSION}`;
 const PRECACHE_URLS = ["./assets/aione-tauri-Bix63w1B.js","./assets/core-IUlRufS4.js","./assets/dist-js-iAwiTVxH.js","./assets/index-Ch6t0z_X.css","./assets/index-s28z8DrD.js","./build/Release-mt/AIOneWebMT.js","./build/Release-mt/AIOneWebMT.wasm","./build/Release/AIOneWeb.js","./build/Release/AIOneWeb.wasm","./favicon.svg","./icons.svg","./index.html","./manifest.webmanifest","./worker-runtime.js"];
