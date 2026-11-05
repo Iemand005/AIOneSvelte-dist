@@ -1,0 +1,1 @@
+import{c as e}from"./index-B9q-6dS-.js";async function t(t={}){return typeof t==`object`&&Object.freeze(t),await e(`plugin:dialog|open`,{options:t})}export{t as open};
