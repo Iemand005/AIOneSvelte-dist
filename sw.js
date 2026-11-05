@@ -1,7 +1,7 @@
-const CACHE_VERSION = "mw2nazea";
+const CACHE_VERSION = "mw3rj1lo";
 const CACHE_PREFIX = "aione-";
 const CACHE_NAME = `${CACHE_PREFIX}${CACHE_VERSION}`;
-const PRECACHE_URLS = ["./assets/aione-tauri-Bowk7E0S.js","./assets/dist-js-B3oX_EYh.js","./assets/index-BDD_E9yv.css","./assets/index-NEQ8hy2c.js","./build/Release-mt/AIOneWebMT.js","./build/Release-mt/AIOneWebMT.wasm","./build/Release/AIOneWeb.js","./build/Release/AIOneWeb.wasm","./favicon.svg","./icons.svg","./index.html","./manifest.webmanifest","./worker-runtime.js"];
+const PRECACHE_URLS = ["./assets/aione-tauri-BwKUppo3.js","./assets/dist-js-zyT3WLim.js","./assets/index-BDD_E9yv.css","./assets/index-Cyyw7mvj.js","./build/Release-mt/AIOneWebMT.js","./build/Release-mt/AIOneWebMT.wasm","./build/Release/AIOneWeb.js","./build/Release/AIOneWeb.wasm","./favicon.svg","./icons.svg","./index.html","./manifest.webmanifest","./worker-runtime.js"];
 const INDEX_URL = new URL("./index.html", self.location.href).href;
 
 self.addEventListener("install", event => {

@@ -1,1 +1,0 @@
-import{c as e}from"./index-NEQ8hy2c.js";async function t(t={}){return typeof t==`object`&&Object.freeze(t),await e(`plugin:dialog|open`,{options:t})}export{t as open};
